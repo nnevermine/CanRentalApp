@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>login_widget</class>
  <widget class="QWidget" name="login_widget">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -57,6 +60,7 @@ QLabel {
 
 QLineEdit {
 	background: none;
+	background-color: white;
 	border-style: outset;
 	border-width: 2px;
 	border-color: #0c7b93;
@@ -316,6 +320,7 @@ QPushButton:pressed {
            <string notr="true">QPushButton {
 	background: none;
 	border: none;
+	color: rgb(50, 50, 50);
 }
 
 QPushButton:pressed {
