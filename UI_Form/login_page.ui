@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>login_widget</class>
+ <widget class="QWidget" name="login_widget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -36,12 +36,36 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-	background-color: qlineargradient(x1: 0, y0: 1, x2: 1, y2: 1,
-                                stop: 0 #27496d, stop: 0.3 #0c7b93, 
-							stop: 1 #0d7377);
+	background-image: url(:/login/login_background.png);
+	background-repeat: no-repeat;
+	backgrond-position: center;
+}
+
+QFrame {
+	background: none;
+	background-color: white;
+	border-radius: 10px;
+	alignment: center;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+QLabel {
+	background: none;
+	color: #0c7b93;
+}
+
+QLineEdit {
+	background: none;
+	border-style: outset;
+	border-width: 2px;
+	border-color: #0c7b93;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 }</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,0">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -49,16 +73,80 @@
     <number>10</number>
    </property>
    <property name="topMargin">
-    <number>10</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>10</number>
    </property>
    <property name="bottomMargin">
-    <number>10</number>
+    <number>60</number>
    </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>61</number>
+     </property>
+     <item alignment="Qt::AlignLeft">
+      <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>32</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+	background: none;
+	padding-left: 10px;
+	color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#adafb4;&quot;&gt;Car&lt;/span&gt;&lt;span style=&quot; color:#dadee2;&quot;&gt;Rental&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background: none;
+	border: none;
+	color: rgb(17, 135, 157);
+	text-align: right;
+	padding-right: 50px;
+}
+
+QPushButton:pressed {
+	color: rgb(183, 182, 184);
+}</string>
+       </property>
+       <property name="text">
+        <string>Create Account</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item alignment="Qt::AlignHCenter">
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="login_frame">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -81,26 +169,7 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">QFrame {
-	background-color: rgb(255, 255, 255);
-	border-radius: 10px;
-	alignment: center;
-	padding-right: 20.4px;
-	padding-left: 7px;
-}
-
-QLabel {
-	color: #0c7b93;
-}
-
-QLineEdit {
-	background-color: rgb(255, 255, 255);
-	border-style: outset;
-	border-width: 1px;
-	border-color: #0c7b93;
-	border-radius: 10px;
-}
-</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -108,12 +177,15 @@ QLineEdit {
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1,1,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
       <item>
        <widget class="QLabel" name="login_label">
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>120</width>
           <height>35</height>
          </size>
         </property>
@@ -122,6 +194,11 @@ QLineEdit {
           <pointsize>28</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	padding: 0px;
+}</string>
+        </property>
         <property name="text">
          <string>&lt;strong&gt;Login&lt;/strong&gt;</string>
         </property>
@@ -129,12 +206,12 @@ QLineEdit {
          <bool>false</bool>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QLineEdit" name="lineEdit">
+      <item>
+       <widget class="QLineEdit" name="username_field">
         <property name="minimumSize">
          <size>
           <width>300</width>
@@ -174,8 +251,8 @@ QLineEdit {
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignHCenter">
-       <widget class="QLineEdit" name="lineEdit_2">
+      <item>
+       <widget class="QLineEdit" name="password_field">
         <property name="minimumSize">
          <size>
           <width>300</width>
@@ -205,22 +282,68 @@ QLineEdit {
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignRight">
-       <widget class="QPushButton" name="pushButton">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>40</height>
-         </size>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+        <property name="spacing">
+         <number>-1</number>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>40</height>
-         </size>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background: none;
+	border: none;
+}
+
+QPushButton:pressed {
+	color: rgb(17, 135, 157);
+}</string>
+          </property>
+          <property name="text">
+           <string>Forgot Password</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="signin_button">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background: none;
 	background-color: #0c7b93;
 	border-radius: 10px;
 	font: bold;
@@ -229,20 +352,41 @@ QLineEdit {
 }
 
 QPushButton:pressed {
+	background: none;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #0C5A76, stop: 1 #0c7b93);
 }</string>
-        </property>
-        <property name="text">
-         <string>Sign In</string>
-        </property>
-       </widget>
+          </property>
+          <property name="text">
+           <string>Sign In</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
    </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../assets/images.qrc"/>
+ </resources>
  <connections/>
 </ui>
